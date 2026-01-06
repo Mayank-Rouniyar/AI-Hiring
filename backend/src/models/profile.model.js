@@ -24,6 +24,23 @@ const profileSchema=new mongoose.Schema({
     college:{
         type:String,
     },
+    desiredSalary:{
+        type:Number,
+        required:true,
+    },
+    currentSalary:{
+        type:Number,
+    },
+    links:{
+        type:[String],
+    },
+    profilePicture:{
+        type:String,
+    },
+    resume:{
+        type:String,
+        required:true
+    }
 },{
     timestamps:true,
 })
