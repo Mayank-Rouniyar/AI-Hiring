@@ -1,0 +1,39 @@
+import mongoose from "mongoose"
+const jobSchema=new mongoose.Schema({
+    title:{
+        type:String,
+        required:true,
+    },
+    organization:{
+        type:String,
+        required:true,
+    },
+    location:{
+        type:String,
+        required:true,
+    },
+    policy:{
+        type:String,
+        enum:["Remote","Onsite"],
+        required:true,
+    },
+    stipent:{
+        type:Number,
+        required:true,
+    },
+    description:{
+        type:String,
+        required:true,
+    },
+    skills:{
+        type:[String],
+    },
+    founders:{
+        type:String,
+        required:true,
+    },
+    aboutCompany:{
+        type:String,
+    }
+},{timestamps:true})
+export const Job=mongoose.model("Job",jobSchema)

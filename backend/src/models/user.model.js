@@ -23,6 +23,9 @@ const userSchema=new mongoose.Schema({
         enum:["Candidate","Recruiter"],
         required:true
     }
+},
+{
+    timestamps:true,
 })
 userSchema.pre("save",async (next)=>{
    if(this.isModified("password"))
