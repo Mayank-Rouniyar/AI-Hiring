@@ -17,8 +17,8 @@ const jobSchema=new mongoose.Schema({
         enum:["Remote","Onsite"],
         required:true,
     },
-    stipent:{
-        type:Number,
+    salary:{
+        type:String,
         required:true,
     },
     description:{
@@ -34,6 +34,10 @@ const jobSchema=new mongoose.Schema({
     },
     aboutCompany:{
         type:String,
+    },
+    applied:{
+        type:mongoose.Schema.ObjectId,
+        ref:"profile"
     }
 },{timestamps:true})
 export const Job=mongoose.model("Job",jobSchema)

@@ -8,7 +8,7 @@ const profileSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    primaryRoles:{
+    primaryRole:{
         type:String,
         required:true,
     },
@@ -40,6 +40,18 @@ const profileSchema=new mongoose.Schema({
     resume:{
         type:String,
         required:true
+    },
+    email:{
+        type:String,
+        required:true,
+    },
+    contactNo:{
+        type:String,
+        required:true,
+    },
+    owner:{
+        type:mongoose.Schema.ObjectId,
+        ref:user
     }
 },{
     timestamps:true,
