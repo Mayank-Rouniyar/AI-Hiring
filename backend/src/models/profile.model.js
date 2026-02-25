@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import { User } from "./user.model.js"
 const profileSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -51,7 +52,7 @@ const profileSchema=new mongoose.Schema({
     },
     owner:{
         type:mongoose.Schema.ObjectId,
-        ref:user
+        ref:"User"
     }
 },{
     timestamps:true,

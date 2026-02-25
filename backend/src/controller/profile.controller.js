@@ -5,8 +5,14 @@ import asyncHandler from "../utils/asyncHandler.js"
 import { ApiError } from "../utils/ApiError.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js"
 const createProfile=asyncHandler(async(req,res)=>{
-    const {name,location,primaryRole,otherRoles,aboutMe,experience,college,desiredSalary,currentSalary,links}=req.body
-    if(!name||!location||primaryRole||desiredSalary)
+    if(!req)
+    {
+        throw new ApiError(401,"req is undefined")
+    }
+    const {name,location,primaryRole,otherRoles,aboutMe,experience,college,desiredSalary,currentSalary,links,email
+        ,contactNo
+    }=req.body
+    if(!name||!location||!primaryRole||!desiredSalary)
     {
         throw new ApiError(401,"Fill all the required parameter")
     }

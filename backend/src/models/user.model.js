@@ -58,4 +58,4 @@ process.env.REFRESH_TOKEN_SECRET,
 }
 )
 }
-export const User=mongoose.model("User".userSchema)
+export const User=mongoose.model("User",userSchema)

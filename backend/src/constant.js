@@ -1,1 +1,1 @@
-export const DB_NAME="AI Hiring"
+export const DB_NAME="AI_Hiring"
