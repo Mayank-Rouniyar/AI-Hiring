@@ -2,12 +2,12 @@ import mongoose from "mongoose"
 import { User } from "./user.model.js"
 const profileSchema=new mongoose.Schema({
     name:{
-        type:String,
-        required:true,
+        type:mongoose.Schema.ObjectId,
+        ref:"User"
     },
     location:{
-        type:String,
-        required:true,
+        type:mongoose.Schema.ObjectId,
+        ref:"User"
     },
     primaryRole:{
         type:String,
@@ -20,7 +20,7 @@ const profileSchema=new mongoose.Schema({
         type:String,
     },
     experience:{
-        type:String,
+        type:Number,
     },
     college:{
         type:String,
@@ -32,9 +32,12 @@ const profileSchema=new mongoose.Schema({
     currentSalary:{
         type:Number,
     },
-    links:{
-        type:[String],
-    },
+    links:[
+        {
+            type:String,
+            label:String,
+        }
+    ],
     profilePicture:{
         type:String,
     },

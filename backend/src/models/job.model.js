@@ -14,12 +14,12 @@ const jobSchema=new mongoose.Schema({
     },
     policy:{
         type:String,
-        enum:["Remote","Onsite"],
+        enum:["Remote","Onsite","Hybrid"],
         required:true,
     },
     salary:{
-        type:String,
-        required:true,
+       min:Number,
+       max:Number
     },
     description:{
         type:String,
@@ -27,17 +27,14 @@ const jobSchema=new mongoose.Schema({
     },
     skills:{
         type:[String],
+        required:true,
     },
     founders:{
-        type:String,
+        type:[String],
         required:true,
     },
     aboutCompany:{
         type:String,
     },
-    applied:{
-        type:mongoose.Schema.ObjectId,
-        ref:"profile"
-    }
 },{timestamps:true})
 export const Job=mongoose.model("Job",jobSchema)
