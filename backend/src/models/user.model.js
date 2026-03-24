@@ -25,6 +25,9 @@ const userSchema=new mongoose.Schema({
         type:String,
         enum:["Candidate","Recruiter"],
         required:true
+    },
+    refreshToken:{
+        type:String
     }
 },
 {
